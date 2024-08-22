@@ -85,5 +85,48 @@ namespace PlantNest_Contest_E_Azam.Controllers
             _manicontext.SaveChanges();
             return RedirectToAction("profile");
         }
+        public IActionResult FetchUsers()
+        {
+            var admin = HttpContext.Session.GetString("admin_session");
+            if (admin != null)
+            {
+                return View(_manicontext.tbl_user.ToList());
+
+            }
+            else
+            {
+                return RedirectToAction("login");
+            }
+        }
+        public IActionResult DetailUsers(int id)
+        {
+            return View(_manicontext.tbl_user.FirstOrDefault(u => u.user_id== id));
+        }
+        public IActionResult UpdateUser(int id)
+        {
+            return View(_manicontext.tbl_user.Find(id));
+        }
+        [HttpPost]
+        public IActionResult UpdateUser(User user, IFormFile user_image)
+        {
+            string ImagePath = Path.Combine(_env.WebRootPath, "UserImages", user_image.FileName);
+            using (FileStream fs = new FileStream(ImagePath, FileMode.Create))
+            {
+                user_image.CopyTo(fs);
+            }
+            user.user_image = user_image.FileName;
+            _manicontext.tbl_user.Update(user);
+            _manicontext.SaveChanges();
+            return RedirectToAction("FetchUsers");
+        }
+
+        public IActionResult DeleteUser(int id)
+        {
+            var customer = _manicontext.tbl_user.Find(id);
+            _manicontext.tbl_user.Remove(customer);
+            _manicontext.SaveChanges();
+            return RedirectToAction("FetchUsers");
+        }
+
     }
 }

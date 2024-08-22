@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateUser";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model User
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Customer Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <form enctype="multipart/form-data" method="post">
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Name</label>
+                                <div class="col-sm-9">
+                                    <input type="hidden" name="user_id" class="form-control" value="@Model.user_id" id="inputEmail3">
+                                    <input type="text" name="user_name" class="form-control" value="@Model.user_name" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Contact</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="user_contact" class="form-control" value="@Model.user_contact" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Email</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="user_email" class="form-control" value="@Model.user_email" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Password</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="user_password" class="form-control" value="@Model.user_password" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Username</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="user_username" class="form-control" value="@Model.user_username" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" name="user_image" value="@Model.user_image" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="card-footer center">
+                                <input type="submit" value="Update User" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
