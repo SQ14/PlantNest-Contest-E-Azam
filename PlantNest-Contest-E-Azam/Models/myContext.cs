@@ -8,5 +8,7 @@ namespace PlantNest_Contest_E_Azam.Models
         {
                 
         }
-    }
+
+		public DbSet<Admin> tbl_admin { get; set; }
+	}
 }
