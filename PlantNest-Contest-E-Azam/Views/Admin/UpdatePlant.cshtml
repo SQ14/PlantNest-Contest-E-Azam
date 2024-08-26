@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "UpdatePlant";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model Plant
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Plant Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <form enctype="multipart/form-data" method="post">
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Name</label>
+                                <div class="col-sm-9">
+                                    <input type="hidden" name="plant_id" class="form-control" value="@Model.plant_id" id="inputEmail3">
+                                    <input type="text" name="plant_name" class="form-control" value="@Model.plant_name" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Species</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="plant_species" class="form-control" value="@Model.plant_species" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Price</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="plant_price" class="form-control" value="@Model.plant_price" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Discount</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="plant_discount" class="form-control" value="@Model.plant_discount" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Description</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="plant_description" class="form-control" value="@Model.plant_description" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant  Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" name="plant_image" class="form-control" value="@Model.plant_image" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Category </label>
+                                <div class="col-sm-9">
+                                    @Html.Partial("CategoryDropdown", ViewData["category"])
+                                </div>
+                            </div>
+                            <div class="card-footer center">
+                                <input type="submit" value="Update Plant" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

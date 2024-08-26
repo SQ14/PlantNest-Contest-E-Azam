@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "FetchReviews";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model List<Review>
+
+<section class="section">
+    <div class="section-body">
+        <div class="row mt-sm-4">
+            <div class="col-12 ">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>All Reviews </h4>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-md">
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Plant Name</th>
+                                    <th>Accessory Name</th>
+                                    <th>Ratings</th>
+                                    <th>Comment</th>
+                                    <th>Review Date</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.users.user_name</td>
+                                        <td>@item.plants.plant_name</td>
+                                        <td>@item.accessories.accessory_name</td>
+                                        <td>@item.Rating</td>
+                                        <td>@item.review_comment</td>
+                                        <td>
+                                            <a href="@Url.Action("DeleteReviews","admin",new{id=item.review_id})" class="dropdown-item has-icon text-danger">
+                                                <i class="far fa-trash-alt"></i>
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

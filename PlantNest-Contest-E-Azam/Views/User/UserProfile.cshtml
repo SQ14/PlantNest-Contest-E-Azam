@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "UserProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br />
+@model List<User>
+<div class="container mt-5">
+    <br />
+    <h1 class="text-center mb-4 mt-5">Customer Profile</h1>
+    <div class="author-box-center">
+        <form asp-action="UpdateUserProfile" enctype="multipart/form-data" method="post" >
+            <center>
+                <img src="@("~/UserImages/"+Model[0].user_image)" hieght="100px" width="100px"
+                     asp-append-version="true" class="rounded-circle author-box-picture" />
+            </center>
+            <center>
+                <div class="author-box-name">
+                    <a href="@Url.Action("UserProfile","user")">@Model[0].user_name</a>
+                </div>
+            </center>
+            <input type="hidden" class="form-control" name="user_id" value="@Model[0].user_id"><br />
+            <input type="hidden" class="form-control" name="user_name" value="@Model[0].user_name">
+            <input type="hidden" class="form-control" name="user_email" value="@Model[0].user_email">
+            <input type="hidden" class="form-control" name="user_contact" value="@Model[0].user_contact">
+            <input type="hidden" class="form-control" name="user_username" value="@Model[0].user_username">
+            <input type="hidden" class="form-control" name="user_password" value="@Model[0].user_password">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-3">
+                    <input type="file" class="form-control " name="user_image" value="@Model[0].user_image">
+                    <div class="clearfix"></div><br />
+                    <input type="submit" class="btn btn-primary" value="Update User Image" />
+
+                </div>
+            </div>
+        </form>
+@* 
+        <center>
+            <div class="col-md-3">
+                <form action="DeleteUserProfile" method="post">
+                    <input type="hidden" class="form-control" name="user_id" value="@Model[0].user_id"><br />
+                    <input type="hidden" class="form-control" name="user_name" value="@Model[0].user_name">
+                    <input type="hidden" class="form-control" name="user_email" value="@Model[0].user_email">
+                    <input type="hidden" class="form-control" name="user_contact" value="@Model[0].user_contact">
+                    <input type="hidden" class="form-control" name="user_username" value="@Model[0].user_username">
+                    <input type="hidden" class="form-control" name="user_password" value="@Model[0].user_password">
+                    <input type="hidden" class="form-control" name="user_image" value="@Model[0].user_image">
+                    <input type="submit" class="btn btn-danger" value="Delete Profile" />
+ </form>
+        </div>
+        </center> *@
+        <br /><br />
+
+
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <form asp-action="UpdateUser" method="post" class="p-4 border rounded"
+                  style="background-color: #f9f9f9;" enctype="multipart/form-data">
+                <input type="hidden" name="user_id" value="@Model[0].user_id" />
+
+
+                <div class="form-group mb-3">
+                    <input type="text" name="user_name" value="@Model[0].user_name" class="form-control" placeholder="Enter User Name" />
+                </div>
+                
+                <div class="form-group mb-3">
+                    <input type="email" name="user_email" value="@Model[0].user_email" class="form-control" placeholder="Enter User Email" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="text" name="user_contact" value="@Model[0].user_contact" class="form-control" placeholder="Enter User Contact" />
+                </div>
+                
+                <div class="form-group mb-3">
+                    <input type="text" name="user_username" value="@Model[0].user_username" class="form-control" placeholder="Enter User Username" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="text" name="user_password" value="@Model[0].user_password" class="form-control" placeholder="Enter User Password" />
+                </div>
+
+                <input type="hidden" name="user_image" value="@Model[0].user_image" />
+                <div class="text-center">
+                    <input type="submit" class="btn btn-success btn-block" value="Update Profile" style="width: 100%;" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

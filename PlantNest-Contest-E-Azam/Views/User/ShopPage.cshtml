@@ -1,0 +1,319 @@
+﻿
+@{
+    ViewData["Title"] = "ShopPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url('/website/img/bg-img/24.jpg');">
+            <h2>Shop</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("index","user")"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### Shop Area Start ##### -->
+    <section class="shop-page section-padding-0-100">
+        <div class="container">
+            <div class="row">
+                <!-- Shop Sorting Data -->
+                <div class="col-12">
+                    <div class="shop-sorting-data d-flex flex-wrap align-items-center justify-content-between">
+                        <!-- Shop Page Count -->
+                        <div class="shop-page-count">
+                            <p>Showing 1–9 of 72 results</p>
+                        </div>
+                        <!-- Search by Terms -->
+                        <div class="search_by_terms">
+                            <form action="#" method="post" class="form-inline">
+                                <select class="custom-select widget-title">
+                                  <option selected>Short by Popularity</option>
+                                  <option value="1">Short by Newest</option>
+                                  <option value="2">Short by Sales</option>
+                                  <option value="3">Short by Ratings</option>
+                                </select>
+                                <select class="custom-select widget-title">
+                                  <option selected>Show: 9</option>
+                                  <option value="1">12</option>
+                                  <option value="2">18</option>
+                                  <option value="3">24</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Sidebar Area -->
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="shop-sidebar-area">
+
+                    
+
+                        <!-- Shop Widget -->
+                        <div class="shop-widget catagory mb-50">
+                            <h4 class="widget-title">Categories</h4>
+                            <div class="widget-desc">
+                            @Html.Partial("Category", ViewData["category"])
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+         
+
+                <!-- All Products Area -->
+                <div class="col-12 col-md-8 col-lg-9">
+
+                    <div class="shop-products-area">
+                    <h1>Accessries</h1>
+                    <div class="row">
+                        @Html.Partial("Accessory", ViewData["accessory"])
+                    </div>
+                </div>
+                <!-- All Plants Area -->
+
+                    <div class="shop-products-area">
+                        <h1>Plants</h1>
+                        <div class="row">
+                        @Html.Partial("Plant", ViewData["plant"])
+                            <!-- Single Product Area -->
+                            @* <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-area mb-50">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="shop-details.html"><img src="~/website/img/bg-img/40.png" alt=""></a>
+                                        <!-- Product Tag -->
+                                        <div class="product-tag">
+                                            <a href="#">Hot</a>
+                                        </div>
+                                        <div class="product-meta d-flex">
+                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Info -->
+                                    <div class="product-info mt-15 text-center">
+                                        <a href="shop-details.html">
+                                            <p>Cactus Flower</p>
+                                        </a>
+                                        <h6>$10.99</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Product Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-area mb-50">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="shop-details.html"><img src="~/website/img/bg-img/41.png" alt=""></a>
+                                        <div class="product-meta d-flex">
+                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Info -->
+                                    <div class="product-info mt-15 text-center">
+                                        <a href="shop-details.html">
+                                            <p>Cactus Flower</p>
+                                        </a>
+                                        <h6>$10.99</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Product Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-area mb-50">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="shop-details.html"><img src="~/website/img/bg-img/42.png" alt=""></a>
+                                        <div class="product-meta d-flex">
+                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Info -->
+                                    <div class="product-info mt-15 text-center">
+                                        <a href="shop-details.html">
+                                            <p>Cactus Flower</p>
+                                        </a>
+                                        <h6>$10.99</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Product Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-area mb-50">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="shop-details.html"><img src="~/website/img/bg-img/43.png" alt=""></a>
+                                        <div class="product-meta d-flex">
+                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Info -->
+                                    <div class="product-info mt-15 text-center">
+                                        <a href="shop-details.html">
+                                            <p>Cactus Flower</p>
+                                        </a>
+                                        <h6>$10.99</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Product Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-area mb-50">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="shop-details.html"><img src="~/website/img/bg-img/44.png" alt=""></a>
+                                        <div class="product-meta d-flex">
+                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Info -->
+                                    <div class="product-info mt-15 text-center">
+                                        <a href="shop-details.html">
+                                            <p>Cactus Flower</p>
+                                        </a>
+                                        <h6>$10.99</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Product Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-area mb-50">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="shop-details.html"><img src="~/website/img/bg-img/45.png" alt=""></a>
+                                        <div class="product-meta d-flex">
+                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Info -->
+                                    <div class="product-info mt-15 text-center">
+                                        <a href="shop-details.html">
+                                            <p>Cactus Flower</p>
+                                        </a>
+                                        <h6>$10.99</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Product Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-area mb-50">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="shop-details.html"><img src="~/website/img/bg-img/46.png" alt=""></a>
+                                        <div class="product-meta d-flex">
+                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Info -->
+                                    <div class="product-info mt-15 text-center">
+                                        <a href="shop-details.html">
+                                            <p>Cactus Flower</p>
+                                        </a>
+                                        <h6>$10.99</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Product Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-area mb-50">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="shop-details.html"><img src="~/website/img/bg-img/47.png" alt=""></a>
+                                        <!-- Product Tag -->
+                                        <div class="product-tag sale-tag">
+                                            <a href="#">Sale</a>
+                                        </div>
+                                        <div class="product-meta d-flex">
+                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Info -->
+                                    <div class="product-info mt-15 text-center">
+                                        <a href="shop-details.html">
+                                            <p>Cactus Flower</p>
+                                        </a>
+                                        <h6>$10.99</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Product Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-product-area mb-50">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="shop-details.html"><img src="~/website/img/bg-img/48.png" alt=""></a>
+                                        <div class="product-meta d-flex">
+                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Info -->
+                                    <div class="product-info mt-15 text-center">
+                                        <a href="shop-details.html">
+                                            <p>Cactus Flower</p>
+                                        </a>
+                                        <h6>$10.99</h6>
+                                    </div>
+                                </div> *@
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Shop Area End ##### -->
+
+

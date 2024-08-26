@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateAccessory";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model Accessory
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Update Accessory</h4>
+                    </div>
+                    <div class="card-body">
+                        <form enctype="multipart/form-data" method="post">
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Name</label>
+                                <div class="col-sm-9">
+                                    <input type="hidden" name="accessory_id" class="form-control" value="@Model.accessory_id" id="inputEmail3">
+                                    <input type="text" name="accessory_name" class="form-control" value="@Model.accessory_name" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Accessory Purpose</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="accessory_purpose" class="form-control" value="@Model.accessory_purpose" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Accessory Price</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="accessory_price" class="form-control" value="@Model.accessory_price" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Accessory Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" name="accessory_image" class="form-control" value="@Model.accessory_image" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="card-footer center">
+                                <input type="submit" value="Update Accessory" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

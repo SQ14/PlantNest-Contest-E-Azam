@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "FetchProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+@model List<User>
+<br /><br /><br />
+<h1>FetchProfile</h1>
+
+<table class="table">
+    <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+  @foreach (var item in Model)
+        { 
+        <tr>
+                <td>@item.user_id</td>
+                <td>@item.user_name</td>
+                <td>@item.user_email</td>
+                <td>@item.user_contact</td>
+                <td>@item.user_username</td>
+                <td>@item.user_password</td>
+                <td>
+                    <a href="@Url.Action("DeleteUser","admin",new{id=item.user_id})" class="dropdown-item has-icon text-danger">
+                        <i class="far fa-trash-alt"></i>
+                        Delete
+                    </a>
+                </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

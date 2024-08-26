@@ -1,0 +1,9 @@
+﻿@model List<Category>
+
+@foreach(var cat in Model)
+{
+    <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">@cat.category_name<span class="text-muted">@* (72) *@</span></label>
+    </div>
+}

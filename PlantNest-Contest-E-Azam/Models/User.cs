@@ -11,6 +11,6 @@ namespace PlantNest_Contest_E_Azam.Models
         public string? user_contact { get; set; }
         public string? user_username { get; set; }
         public string user_password { get; set; }
-        public string user_image { get; set; }
+        public string? user_image { get; set; }
     }
 }

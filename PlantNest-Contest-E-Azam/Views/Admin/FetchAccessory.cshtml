@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewData["Title"] = "FetchAccessory";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+@{
+    ViewData["Title"] = "FetchPlants";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model List<Accessory>
+
+<section class="section">
+    <div class="section-body">
+        <div class="align-right">
+            <a href="@Url.Action("AddAccessory","admin")" class="btn btn-primary align-right">Add New Accessory</a>
+        </div>
+        <div class="row mt-sm-4">
+            <div class="col-12 ">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Accessory Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table-1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Accessory Id</th>
+                                        <th>Accessory Name</th>
+                                        <th>Accessory Purpose</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.accessory_id</td>
+                                            <td>@item.accessory_name</td>
+                                            <td>@item.accessory_purpose</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <a href="#" data-toggle="dropdown" class="btn btn-warning dropdown-toggle">Options</a>
+                                                    <div class="dropdown-menu">
+                                                        <a href="@Url.Action("DetailAccessory","admin",new{id=item.accessory_id})" class="dropdown-item has-icon"><i class="fas fa-eye"></i> View Details</a>
+                                                        <a href="@Url.Action("UpdateAccessory","admin",new{id=item.accessory_id})" class="dropdown-item has-icon"><i class="far fa-edit"></i> Edit</a>
+                                                        <a href="@Url.Action("DeleteAccessory","admin",new{id=item.accessory_id})" class="dropdown-item has-icon text-danger">
+                                                            <i class="far fa-trash-alt"></i>
+                                                            Delete
+                                                        </a>
+                                                    </div>
+                                            </td>
+                                            @* <td>
+                                        <div class="badge badge-success badge-shadow">Completed</div>
+                                        </td>
+                                        <td><a href="#" class="btn btn-primary">Detail</a></td>*@
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+

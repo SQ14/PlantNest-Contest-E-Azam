@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "FetchPlants";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model List<Plant>
+
+<section class="section">
+    <div class="section-body">
+        <div class="align-right">
+            <a href="@Url.Action("AddPlant","admin")" class="btn btn-primary align-right">Add New Plant</a>
+        </div>
+        <div class="row mt-sm-4">
+            <div class="col-12 ">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Plant Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table-1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">
+                                            ID
+                                        </th>
+                                        <th>Plant Name</th>
+                                        <th>Plant Species</th>
+                                        <th>Plant Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.plant_id</td>
+                                            <td>@item.plant_name</td>
+                                            <td>@item.plant_species</td>
+                                            <td>@item.plant_price</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <a href="#" data-toggle="dropdown" class="btn btn-warning dropdown-toggle">Options</a>
+                                                    <div class="dropdown-menu">
+                                                        <a href="@Url.Action("DetailPlant","admin",new{id=item.plant_id})" class="dropdown-item has-icon"><i class="fas fa-eye"></i> View Details</a>
+                                                        <a href="@Url.Action("UpdatePlant","admin",new{id=item.plant_id})" class="dropdown-item has-icon"><i class="far fa-edit"></i> Edit</a>
+                                                        <a href="@Url.Action("DeletePlant","admin",new{id=item.plant_id})" class="dropdown-item has-icon text-danger">
+                                                            <i class="far fa-trash-alt"></i>
+                                                            Delete
+                                                        </a>
+                                                    </div>
+                                            </td>
+                                            @* <td>
+                                            <div class="badge badge-success badge-shadow">Completed</div>
+                                        </td>
+                                        <td><a href="#" class="btn btn-primary">Detail</a></td>*@
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>

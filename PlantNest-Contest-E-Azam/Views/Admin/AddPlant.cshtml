@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "AddPlant";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Add Plant</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" placeholder="Plant Name" required name="plant_name" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Species</label>
+                                <div class="col-sm-9">
+                                    <input type="text" placeholder="Plant Species" required name="plant_species" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Price</label>
+                                <div class="col-sm-9">
+                                    <input type="number" placeholder="Plant Price" required name="plant_price" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Discount</label>
+                                <div class="col-sm-9">
+                                    <input type="number" placeholder="Plant Discount" required name="plant_discount" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" placeholder="Plant Image" required name="plant_image" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Plant Description</label>
+                                <div class="col-sm-9">
+                                    <input type="text" placeholder="Plant Description" required name="plant_description" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Category</label>
+                                <div class="col-sm-9">
+                                    @Html.Partial("CategoryDropdown", ViewData["category"])
+                                </div>
+                            </div>
+                            <div class="card-footer center">
+                                <input type="submit" value="Add Plant" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
